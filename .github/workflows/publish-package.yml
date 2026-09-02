@@ -35,5 +35,6 @@ jobs:
       - run: cargo clippy --all-targets -- -D warnings
       - run: cargo test --locked
       - run: wasm-pack build --target web --scope marcosousapoza --out-dir pkg
+      - run: npm pkg fix --prefix pkg
       - run: npm pack --dry-run ./pkg
       - run: npm publish ./pkg --access public --provenance
