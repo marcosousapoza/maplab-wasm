@@ -1,0 +1,23 @@
+name: User story
+description: Propose a small, valuable increment of work.
+title: "[Story]: "
+labels: ["type:story"]
+body:
+  - type: textarea
+    id: story
+    attributes:
+      label: User story
+      description: Use "As a ..., I want ..., so that ...".
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      placeholder: "- [ ] Observable outcome"
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies and contract impact

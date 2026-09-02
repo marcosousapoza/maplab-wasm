@@ -1,0 +1,24 @@
+name: Cross-repository dependency
+description: Report a contract problem owned by this repository.
+title: "[Dependency]: "
+labels: ["type:dependency"]
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Source repository and issue
+      placeholder: marcosousapoza/maplab-web#123
+    validations:
+      required: true
+  - type: textarea
+    id: contract
+    attributes:
+      label: Contract mismatch
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Requested outcome
+    validations:
+      required: true

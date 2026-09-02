@@ -1,0 +1,14 @@
+[package]
+name = "maplab-wasm"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.97"
+license = "GPL-3.0-only"
+description = "WebAssembly geospatial calculations for Maplab"
+repository = "https://github.com/marcosousapoza/maplab-wasm"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+wasm-bindgen = "0.2.105"
