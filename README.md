@@ -13,7 +13,7 @@ Rust/WebAssembly geospatial calculations for the Maplab browser client.
 ```bash
 cargo test
 cargo clippy --all-targets -- -D warnings
-wasm-pack build --target web --out-dir pkg
+wasm-pack build --target web --scope marcosousapoza --out-dir pkg
 ```
 
 The generated `pkg/` directory is an npm-compatible artifact and is not committed.
@@ -26,3 +26,9 @@ produces `pkg/maplab_wasm.js`, `pkg/maplab_wasm.d.ts`, and a `.wasm` binary.
 
 This repository owns the generated JavaScript/WASM contract. Report problems owned
 by another component in that component's GitHub repository.
+
+## Versioning
+
+See [VERSIONING.md](VERSIONING.md). Use
+`./scripts/bump-version.sh patch|minor|major`; matching `vX.Y.Z` tags publish the
+scoped npm package to GitHub Packages.
