@@ -31,4 +31,4 @@ by another component in that component's GitHub repository.
 
 See [VERSIONING.md](VERSIONING.md). Use
 `./scripts/bump-version.sh patch|minor|major`; matching `vX.Y.Z` tags publish the
-scoped npm package to GitHub Packages.
+public scoped package to npmjs using trusted publishing.

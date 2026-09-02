@@ -20,7 +20,7 @@ git add Cargo.toml Cargo.lock
 git commit -m "Bump WASM version to X.Y.Z"
 ```
 
-## Publish to GitHub Packages
+## Publish to npmjs
 
 Push a `vX.Y.Z` tag matching `Cargo.toml`:
 
@@ -31,16 +31,10 @@ git push origin main vX.Y.Z
 
 `.github/workflows/publish-package.yml` verifies the tag, runs all checks, builds
 with `wasm-pack --scope marcosousapoza`, and publishes
-`@marcosousapoza/maplab-wasm` to `https://npm.pkg.github.com` using the workflow's
-`GITHUB_TOKEN`. No npmjs.com account or npm token is involved.
-
-Consumers configure and authenticate the GitHub registry:
-
-```ini
-@marcosousapoza:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
-```
+`@marcosousapoza/maplab-wasm` publicly to npmjs. npm trusted publishing exchanges
+the GitHub Actions OIDC identity for a short-lived publishing credential and adds
+package provenance; no npm token is stored in GitHub.
 
 ```bash
-NODE_AUTH_TOKEN="$(gh auth token)" npm install @marcosousapoza/maplab-wasm@X.Y.Z
+npm install @marcosousapoza/maplab-wasm@X.Y.Z
 ```
